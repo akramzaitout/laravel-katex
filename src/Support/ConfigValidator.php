@@ -17,14 +17,14 @@ class ConfigValidator
      *
      * @var array<int, string>
      */
-    protected array $errors = [];
+    protected $errors = [];
 
     /**
      * Required configuration keys.
      *
      * @var array<int, string>
      */
-    protected array $requiredKeys = [
+    protected $requiredKeys = [
         'version',
         'cdn',
         'options',

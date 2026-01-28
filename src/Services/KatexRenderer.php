@@ -162,12 +162,18 @@ class KatexRenderer
      *
      * @param  array<string, mixed>  $options
      */
-    protected function encodeOptions(array $options): string
+    public function encodeOptions(array $options): string
     {
-        return json_encode(
+        $json = json_encode(
             $options,
-            JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_THROW_ON_ERROR
+            JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT
         );
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new \RuntimeException('JSON encoding error: ' . json_last_error_msg());
+        }
+
+        return $json;
     }
 
     /**
