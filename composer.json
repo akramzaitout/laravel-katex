@@ -1,27 +1,71 @@
 {
-    "name": "akramzaitout/laravel-katex",
-    "description": "Zero-config KaTeX Blade directives for Laravel",
+    "name": "akram-zaitout/laravel-katex",
+    "description": "A comprehensive Laravel package for rendering beautiful mathematical expressions using KaTeX",
+    "keywords": [
+        "laravel",
+        "katex",
+        "math",
+        "mathematics",
+        "latex",
+        "equations",
+        "blade",
+        "rendering"
+    ],
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Akram Zaitout",
-            "email": "akramzaitout@gmail.com"
+            "email": "akramzaitout@example.com"
         }
     ],
+    "require": {
+        "php": "^8.1|^8.2|^8.3",
+        "illuminate/support": "^10.0|^11.0",
+        "illuminate/contracts": "^10.0|^11.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0",
+        "phpunit/phpunit": "^10.0",
+        "phpstan/phpstan": "^1.10",
+        "laravel/pint": "^1.0",
+        "mockery/mockery": "^1.6"
+    },
     "autoload": {
         "psr-4": {
             "AkramZaitout\\LaravelKatex\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AkramZaitout\\LaravelKatex\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint"
     },
     "extra": {
         "laravel": {
             "providers": [
                 "AkramZaitout\\LaravelKatex\\KatexServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Katex": "AkramZaitout\\LaravelKatex\\Facades\\Katex"
+            }
         }
     },
-    "require": {
-        "php": "^8.0",
-        "illuminate/support": "^9.0|^10.0|^11.0"
-    }
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
