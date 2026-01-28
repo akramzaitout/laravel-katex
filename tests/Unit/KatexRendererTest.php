@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
  */
 class KatexRendererTest extends TestCase
 {
-    protected KatexRenderer $renderer;
+    protected $renderer;
 
     protected function setUp(): void
     {
