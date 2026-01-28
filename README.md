@@ -1,7 +1,7 @@
 # Laravel KaTeX
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/KaTeX/KaTeX/main/static/katex-logo.svg" alt="KaTeX Logo" width="200">
+  <img src="./assets/logo.png" alt="Laravel KaTeX Package Logo" width="200" />
 </p>
 
 <p align="center">
