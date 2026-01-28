@@ -4,13 +4,6 @@
   <img src="./assets/logo.png" alt="Laravel KaTeX Package Logo" width="200" />
 </p>
 
-<p align="center">
-    <a href="https://packagist.org/packages/akram-zaitout/laravel-katex"><img src="https://img.shields.io/packagist/v/akram-zaitout/laravel-katex" alt="Latest Version"></a>
-    <a href="https://packagist.org/packages/akram-zaitout/laravel-katex"><img src="https://img.shields.io/packagist/dt/akram-zaitout/laravel-katex" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/akram-zaitout/laravel-katex"><img src="https://img.shields.io/packagist/l/akram-zaitout/laravel-katex" alt="License"></a>
-    <a href="https://github.com/akram-zaitout/laravel-katex/actions"><img src="https://github.com/akram-zaitout/laravel-katex/workflows/tests/badge.svg" alt="Tests"></a>
-</p>
-
 A comprehensive, production-ready Laravel package for rendering beautiful mathematical expressions using [KaTeX](https://katex.org/). Built with modern PHP 8.1+ features, dependency injection, and following Laravel best practices.
 
 ## ✨ Features
