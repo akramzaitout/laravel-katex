@@ -1,0 +1,41 @@
+# Dependencies
+/vendor/
+
+# Composer
+composer.lock
+
+# PHPUnit
+.phpunit.cache
+.phpunit.result.cache
+coverage/
+
+# PHPStan
+/phpstan.neon
+phpstan.neon
+/phpstan-cache/
+
+# IDE / Editor
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build / temp
+*.tmp
+*.bak
+
+# Node (only if you add assets later)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Misc
+.env
+.env.*
