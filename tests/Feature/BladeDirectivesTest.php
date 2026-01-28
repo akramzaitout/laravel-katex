@@ -14,6 +14,31 @@ use Orchestra\Testbench\TestCase;
  */
 class BladeDirectivesTest extends TestCase
 {
+    /**
+     * Render a Blade string.
+     */
+    protected function renderBlade(string $string, array $data = []): string
+    {
+        if (method_exists(Blade::class, 'render')) {
+            return Blade::render($string, $data);
+        }
+
+        $php = Blade::compileString($string);
+        $obLevel = ob_get_level();
+        ob_start();
+        extract($data);
+        try {
+            eval('?>' . $php);
+        } catch (\Throwable $e) {
+            while (ob_get_level() > $obLevel) {
+                ob_end_clean();
+            }
+            throw $e;
+        }
+
+        return ob_get_clean();
+    }
+
     protected function getPackageProviders($app): array
     {
         return [
@@ -36,7 +61,7 @@ class BladeDirectivesTest extends TestCase
 
     public function test_katex_styles_directive_renders(): void
     {
-        $output = Blade::render('@katexStyles');
+        $output = $this->renderBlade('@katexStyles');
 
         $this->assertStringContainsString('<link', $output);
         $this->assertStringContainsString('rel="stylesheet"', $output);
@@ -45,7 +70,7 @@ class BladeDirectivesTest extends TestCase
 
     public function test_katex_scripts_directive_renders(): void
     {
-        $output = Blade::render('@katexScripts');
+        $output = $this->renderBlade('@katexScripts');
 
         $this->assertStringContainsString('<script', $output);
         $this->assertStringContainsString('katex.min.js', $output);
@@ -54,14 +79,14 @@ class BladeDirectivesTest extends TestCase
 
     public function test_katex_scripts_directive_accepts_options(): void
     {
-        $output = Blade::render("@katexScripts(['throwOnError' => true])");
+        $output = $this->renderBlade("@katexScripts(['throwOnError' => true])");
 
         $this->assertStringContainsString('&quot;throwOnError&quot;:true', $output);
     }
 
     public function test_katex_inline_directive_renders(): void
     {
-        $output = Blade::render("@katex('x^2')");
+        $output = $this->renderBlade("@katex('x^2')");
 
         $this->assertStringContainsString('\\(', $output);
         $this->assertStringContainsString('x^2', $output);
@@ -70,7 +95,7 @@ class BladeDirectivesTest extends TestCase
 
     public function test_katex_block_directive_renders(): void
     {
-        $output = Blade::render("@katexBlock('\\sum_{i=1}^{n}')");
+        $output = $this->renderBlade("@katexBlock('\\sum_{i=1}^{n}')");
 
         $this->assertStringContainsString('$$', $output);
         $this->assertStringContainsString('\\sum_{i=1}^{n}', $output);
@@ -78,7 +103,7 @@ class BladeDirectivesTest extends TestCase
 
     public function test_katex_directive_escapes_html(): void
     {
-        $output = Blade::render("@katex('<script>alert(1)</script>')");
+        $output = $this->renderBlade("@katex('<script>alert(1)</script>')");
 
         $this->assertStringNotContainsString('<script>', $output);
         $this->assertStringContainsString('&lt;script&gt;', $output);

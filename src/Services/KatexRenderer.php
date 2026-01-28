@@ -20,12 +20,12 @@ class KatexRenderer
      *
      * @var array<string, mixed>
      */
-    protected array $config;
+    protected $config;
 
     /**
      * Configuration validator.
      */
-    protected ConfigValidator $validator;
+    protected $validator;
 
     /**
      * Create a new KatexRenderer instance.
@@ -61,7 +61,7 @@ class KatexRenderer
     /**
      * Get configuration value.
      */
-    public function getConfig(string $key, mixed $default = null): mixed
+    public function getConfig(string $key, $default = null)
     {
         return data_get($this->config, $key, $default);
     }

@@ -17,7 +17,7 @@ class KatexBladeCompiler
     /**
      * KaTeX renderer instance.
      */
-    protected KatexRenderer $renderer;
+    protected $renderer;
 
     /**
      * Create a new KatexBladeCompiler instance.
