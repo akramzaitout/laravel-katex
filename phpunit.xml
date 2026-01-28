@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.5/phpunit.xsd"
          bootstrap="vendor/autoload.php"
          colors="true"
          failOnRisky="true"
          failOnWarning="true"
-         cacheDirectory=".phpunit.cache"
          beStrictAboutOutputDuringTests="true">
     <testsuites>
         <testsuite name="Unit">
@@ -15,12 +14,12 @@
             <directory>tests/Feature</directory>
         </testsuite>
     </testsuites>
-    <source restrictDeprecations="true">
-        <include>
+    <filter>
+        <whitelist>
             <directory suffix=".php">src</directory>
-        </include>
-        <exclude>
-            <file>src/helpers.php</file>
-        </exclude>
-    </source>
+            <exclude>
+                <file>src/helpers.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
 </phpunit>
