@@ -15,6 +15,12 @@ use Orchestra\Testbench\TestCase;
 class BladeDirectivesTest extends TestCase
 {
     /**
+     * Fix for "Access to undeclared static property" in newer Testbench versions.
+     * @var \Illuminate\Testing\TestResponse|null
+     */
+    public static $latestResponse = null;
+
+    /**
      * Render a Blade string.
      */
     protected function renderBlade(string $string, array $data = []): string
