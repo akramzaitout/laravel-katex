@@ -12,20 +12,18 @@ use Illuminate\Support\ServiceProvider;
 
 /**
  * KaTeX Service Provider for Laravel
- * 
+ *
  * Registers KaTeX services and Blade directives for rendering mathematical
  * equations using the KaTeX library.
- * 
- * @package AkramZaitout\LaravelKatex
+ *
  * @author Akram Zaitout
+ *
  * @link https://katex.org/
  */
 class KatexServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
     public function boot(): void
     {
@@ -37,8 +35,6 @@ class KatexServiceProvider extends ServiceProvider
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
     public function register(): void
     {
@@ -48,8 +44,6 @@ class KatexServiceProvider extends ServiceProvider
 
     /**
      * Publish configuration file.
-     *
-     * @return void
      */
     protected function publishConfiguration(): void
     {
@@ -60,8 +54,6 @@ class KatexServiceProvider extends ServiceProvider
 
     /**
      * Publish view files.
-     *
-     * @return void
      */
     protected function publishViews(): void
     {
@@ -72,8 +64,6 @@ class KatexServiceProvider extends ServiceProvider
 
     /**
      * Merge package configuration with application configuration.
-     *
-     * @return void
      */
     protected function mergeConfiguration(): void
     {
@@ -85,8 +75,6 @@ class KatexServiceProvider extends ServiceProvider
 
     /**
      * Register package services in the container.
-     *
-     * @return void
      */
     protected function registerServices(): void
     {
@@ -110,8 +98,6 @@ class KatexServiceProvider extends ServiceProvider
 
     /**
      * Register all Blade directives for KaTeX.
-     *
-     * @return void
      */
     protected function registerBladeDirectives(): void
     {

@@ -6,15 +6,12 @@ namespace AkramZaitout\LaravelKatex\Services;
 
 use AkramZaitout\LaravelKatex\Exceptions\InvalidKatexConfigurationException;
 use AkramZaitout\LaravelKatex\Support\ConfigValidator;
-use InvalidArgumentException;
 
 /**
  * KaTeX Renderer Service
- * 
+ *
  * Core service for rendering KaTeX mathematical expressions.
  * Handles configuration, asset generation, and math expression formatting.
- * 
- * @package AkramZaitout\LaravelKatex\Services
  */
 class KatexRenderer
 {
@@ -27,33 +24,32 @@ class KatexRenderer
 
     /**
      * Configuration validator.
-     *
-     * @var ConfigValidator
      */
     protected ConfigValidator $validator;
 
     /**
      * Create a new KatexRenderer instance.
      *
-     * @param array<string, mixed> $config
+     * @param  array<string, mixed>  $config
+     *
      * @throws InvalidKatexConfigurationException
      */
     public function __construct(array $config)
     {
-        $this->validator = new ConfigValidator();
+        $this->validator = new ConfigValidator;
         $this->setConfig($config);
     }
 
     /**
      * Set and validate configuration.
      *
-     * @param array<string, mixed> $config
-     * @return void
+     * @param  array<string, mixed>  $config
+     *
      * @throws InvalidKatexConfigurationException
      */
     protected function setConfig(array $config): void
     {
-        if (!$this->validator->validate($config)) {
+        if (! $this->validator->validate($config)) {
             throw new InvalidKatexConfigurationException(
                 'Invalid KaTeX configuration: ' . implode(', ', $this->validator->getErrors())
             );
@@ -64,10 +60,6 @@ class KatexRenderer
 
     /**
      * Get configuration value.
-     *
-     * @param string $key
-     * @param mixed $default
-     * @return mixed
      */
     public function getConfig(string $key, mixed $default = null): mixed
     {
@@ -76,8 +68,6 @@ class KatexRenderer
 
     /**
      * Generate the KaTeX stylesheet link tag.
-     *
-     * @return string
      */
     public function generateStylesheet(): string
     {
@@ -91,7 +81,7 @@ class KatexRenderer
             'crossorigin' => 'anonymous',
         ];
 
-        if (!empty($integrity)) {
+        if (! empty($integrity)) {
             $attributes['integrity'] = e($integrity);
         }
 
@@ -101,8 +91,7 @@ class KatexRenderer
     /**
      * Generate the KaTeX script tags.
      *
-     * @param array<string, mixed> $options
-     * @return string
+     * @param  array<string, mixed>  $options
      */
     public function generateScripts(array $options = []): string
     {
@@ -135,9 +124,6 @@ class KatexRenderer
 
     /**
      * Wrap expression in inline math delimiters.
-     *
-     * @param string $expression
-     * @return string
      */
     public function wrapInline(string $expression): string
     {
@@ -149,9 +135,6 @@ class KatexRenderer
 
     /**
      * Wrap expression in display math delimiters.
-     *
-     * @param string $expression
-     * @return string
      */
     public function wrapDisplay(string $expression): string
     {
@@ -164,7 +147,7 @@ class KatexRenderer
     /**
      * Merge user options with default options.
      *
-     * @param array<string, mixed> $options
+     * @param  array<string, mixed>  $options
      * @return array<string, mixed>
      */
     protected function mergeOptions(array $options): array
@@ -177,8 +160,7 @@ class KatexRenderer
     /**
      * Encode options as JSON for JavaScript.
      *
-     * @param array<string, mixed> $options
-     * @return string
+     * @param  array<string, mixed>  $options
      */
     protected function encodeOptions(array $options): string
     {
@@ -191,10 +173,7 @@ class KatexRenderer
     /**
      * Build an HTML tag with attributes.
      *
-     * @param string $tag
-     * @param array<string, string> $attributes
-     * @param bool $selfClosing
-     * @return string
+     * @param  array<string, string>  $attributes
      */
     protected function buildHtmlTag(string $tag, array $attributes, bool $selfClosing = true): string
     {
@@ -206,11 +185,6 @@ class KatexRenderer
 
     /**
      * Build a script tag.
-     *
-     * @param string $src
-     * @param string $integrity
-     * @param string|null $onload
-     * @return string
      */
     protected function buildScriptTag(string $src, string $integrity = '', ?string $onload = null): string
     {
@@ -220,7 +194,7 @@ class KatexRenderer
             'crossorigin' => 'anonymous',
         ];
 
-        if (!empty($integrity)) {
+        if (! empty($integrity)) {
             $attributes['integrity'] = e($integrity);
         }
 
@@ -236,8 +210,7 @@ class KatexRenderer
     /**
      * Build HTML attribute string.
      *
-     * @param array<string, string|null> $attributes
-     * @return string
+     * @param  array<string, string|null>  $attributes
      */
     protected function buildAttributes(array $attributes): string
     {
@@ -256,12 +229,10 @@ class KatexRenderer
 
     /**
      * Check if the renderer is configured correctly.
-     *
-     * @return bool
      */
     public function isConfigured(): bool
     {
-        return !empty($this->config) && $this->validator->validate($this->config);
+        return ! empty($this->config) && $this->validator->validate($this->config);
     }
 
     /**

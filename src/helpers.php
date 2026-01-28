@@ -2,12 +2,10 @@
 
 declare(strict_types=1);
 
-if (!function_exists('katex')) {
+if (! function_exists('katex')) {
     /**
      * Get the KaTeX renderer instance or render an expression.
      *
-     * @param string|null $expression
-     * @param bool $display
      * @return \AkramZaitout\LaravelKatex\Services\KatexRenderer|string
      */
     function katex(?string $expression = null, bool $display = false)
@@ -18,18 +16,15 @@ if (!function_exists('katex')) {
             return $renderer;
         }
 
-        return $display 
+        return $display
             ? $renderer->wrapDisplay($expression)
             : $renderer->wrapInline($expression);
     }
 }
 
-if (!function_exists('katex_inline')) {
+if (! function_exists('katex_inline')) {
     /**
      * Render an inline math expression.
-     *
-     * @param string $expression
-     * @return string
      */
     function katex_inline(string $expression): string
     {
@@ -37,12 +32,9 @@ if (!function_exists('katex_inline')) {
     }
 }
 
-if (!function_exists('katex_display')) {
+if (! function_exists('katex_display')) {
     /**
      * Render a display math expression.
-     *
-     * @param string $expression
-     * @return string
      */
     function katex_display(string $expression): string
     {
@@ -50,11 +42,9 @@ if (!function_exists('katex_display')) {
     }
 }
 
-if (!function_exists('katex_styles')) {
+if (! function_exists('katex_styles')) {
     /**
      * Generate KaTeX stylesheet link tag.
-     *
-     * @return string
      */
     function katex_styles(): string
     {
@@ -62,12 +52,9 @@ if (!function_exists('katex_styles')) {
     }
 }
 
-if (!function_exists('katex_scripts')) {
+if (! function_exists('katex_scripts')) {
     /**
      * Generate KaTeX script tags.
-     *
-     * @param array $options
-     * @return string
      */
     function katex_scripts(array $options = []): string
     {

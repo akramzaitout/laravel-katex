@@ -6,11 +6,9 @@ namespace AkramZaitout\LaravelKatex\Support;
 
 /**
  * Configuration Validator
- * 
+ *
  * Validates KaTeX configuration arrays to ensure all required values
  * are present and properly formatted.
- * 
- * @package AkramZaitout\LaravelKatex\Support
  */
 class ConfigValidator
 {
@@ -35,8 +33,7 @@ class ConfigValidator
     /**
      * Validate configuration array.
      *
-     * @param array<string, mixed> $config
-     * @return bool
+     * @param  array<string, mixed>  $config
      */
     public function validate(array $config): bool
     {
@@ -53,13 +50,12 @@ class ConfigValidator
     /**
      * Validate required keys are present.
      *
-     * @param array<string, mixed> $config
-     * @return void
+     * @param  array<string, mixed>  $config
      */
     protected function validateRequiredKeys(array $config): void
     {
         foreach ($this->requiredKeys as $key) {
-            if (!array_key_exists($key, $config)) {
+            if (! array_key_exists($key, $config)) {
                 $this->errors[] = sprintf('Missing required configuration key: %s', $key);
             }
         }
@@ -68,22 +64,22 @@ class ConfigValidator
     /**
      * Validate version format.
      *
-     * @param array<string, mixed> $config
-     * @return void
+     * @param  array<string, mixed>  $config
      */
     protected function validateVersion(array $config): void
     {
-        if (!isset($config['version'])) {
+        if (! isset($config['version'])) {
             return;
         }
 
-        if (!is_string($config['version'])) {
+        if (! is_string($config['version'])) {
             $this->errors[] = 'Version must be a string';
+
             return;
         }
 
         // Validate semantic versioning format
-        if (!preg_match('/^\d+\.\d+\.\d+$/', $config['version'])) {
+        if (! preg_match('/^\d+\.\d+\.\d+$/', $config['version'])) {
             $this->errors[] = 'Version must follow semantic versioning (e.g., 0.16.28)';
         }
     }
@@ -91,21 +87,21 @@ class ConfigValidator
     /**
      * Validate CDN URL format.
      *
-     * @param array<string, mixed> $config
-     * @return void
+     * @param  array<string, mixed>  $config
      */
     protected function validateCdn(array $config): void
     {
-        if (!isset($config['cdn'])) {
+        if (! isset($config['cdn'])) {
             return;
         }
 
-        if (!is_string($config['cdn'])) {
+        if (! is_string($config['cdn'])) {
             $this->errors[] = 'CDN must be a string';
+
             return;
         }
 
-        if (!filter_var($config['cdn'], FILTER_VALIDATE_URL)) {
+        if (! filter_var($config['cdn'], FILTER_VALIDATE_URL)) {
             $this->errors[] = 'CDN must be a valid URL';
         }
     }
@@ -113,17 +109,17 @@ class ConfigValidator
     /**
      * Validate options array.
      *
-     * @param array<string, mixed> $config
-     * @return void
+     * @param  array<string, mixed>  $config
      */
     protected function validateOptions(array $config): void
     {
-        if (!isset($config['options'])) {
+        if (! isset($config['options'])) {
             return;
         }
 
-        if (!is_array($config['options'])) {
+        if (! is_array($config['options'])) {
             $this->errors[] = 'Options must be an array';
+
             return;
         }
 
@@ -133,23 +129,24 @@ class ConfigValidator
     /**
      * Validate delimiters configuration.
      *
-     * @param array<string, mixed> $options
-     * @return void
+     * @param  array<string, mixed>  $options
      */
     protected function validateDelimiters(array $options): void
     {
-        if (!isset($options['delimiters'])) {
+        if (! isset($options['delimiters'])) {
             return;
         }
 
-        if (!is_array($options['delimiters'])) {
+        if (! is_array($options['delimiters'])) {
             $this->errors[] = 'Delimiters must be an array';
+
             return;
         }
 
         foreach ($options['delimiters'] as $index => $delimiter) {
-            if (!is_array($delimiter)) {
+            if (! is_array($delimiter)) {
                 $this->errors[] = sprintf('Delimiter at index %d must be an array', $index);
+
                 continue;
             }
 
@@ -160,29 +157,27 @@ class ConfigValidator
     /**
      * Validate individual delimiter structure.
      *
-     * @param array<string, mixed> $delimiter
-     * @param int $index
-     * @return void
+     * @param  array<string, mixed>  $delimiter
      */
     protected function validateDelimiterStructure(array $delimiter, int $index): void
     {
         $requiredDelimiterKeys = ['left', 'right', 'display'];
 
         foreach ($requiredDelimiterKeys as $key) {
-            if (!array_key_exists($key, $delimiter)) {
+            if (! array_key_exists($key, $delimiter)) {
                 $this->errors[] = sprintf('Delimiter at index %d missing required key: %s', $index, $key);
             }
         }
 
-        if (isset($delimiter['left']) && !is_string($delimiter['left'])) {
+        if (isset($delimiter['left']) && ! is_string($delimiter['left'])) {
             $this->errors[] = sprintf('Delimiter at index %d: left must be a string', $index);
         }
 
-        if (isset($delimiter['right']) && !is_string($delimiter['right'])) {
+        if (isset($delimiter['right']) && ! is_string($delimiter['right'])) {
             $this->errors[] = sprintf('Delimiter at index %d: right must be a string', $index);
         }
 
-        if (isset($delimiter['display']) && !is_bool($delimiter['display'])) {
+        if (isset($delimiter['display']) && ! is_bool($delimiter['display'])) {
             $this->errors[] = sprintf('Delimiter at index %d: display must be a boolean', $index);
         }
     }
@@ -199,11 +194,9 @@ class ConfigValidator
 
     /**
      * Check if there are any validation errors.
-     *
-     * @return bool
      */
     public function hasErrors(): bool
     {
-        return !empty($this->errors);
+        return ! empty($this->errors);
     }
 }
