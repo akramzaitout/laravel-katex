@@ -15,13 +15,7 @@
             <directory>tests/Feature</directory>
         </testsuite>
     </testsuites>
-    <coverage>
-        <report>
-            <html outputDirectory="coverage"/>
-            <text outputFile="php://stdout" showUncoveredFiles="false"/>
-        </report>
-    </coverage>
-    <source>
+    <source restrictDeprecations="true">
         <include>
             <directory suffix=".php">src</directory>
         </include>

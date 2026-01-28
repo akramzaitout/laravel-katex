@@ -56,7 +56,7 @@ class BladeDirectivesTest extends TestCase
     {
         $output = Blade::render("@katexScripts(['throwOnError' => true])");
 
-        $this->assertStringContainsString('"throwOnError":true', $output);
+        $this->assertStringContainsString('&quot;throwOnError&quot;:true', $output);
     }
 
     public function test_katex_inline_directive_renders(): void

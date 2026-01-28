@@ -81,8 +81,8 @@ class KatexRendererTest extends TestCase
             'errorColor' => '#ff0000',
         ]);
 
-        $this->assertStringContainsString('"throwOnError":true', $scripts);
-        $this->assertStringContainsString('"errorColor":"#ff0000"', $scripts);
+        $this->assertStringContainsString('&quot;throwOnError&quot;:true', $scripts);
+        $this->assertStringContainsString('&quot;errorColor&quot;:&quot;#ff0000&quot;', $scripts);
     }
 
     public function test_it_gets_config_values(): void
@@ -113,7 +113,8 @@ class KatexRendererTest extends TestCase
     {
         $renderer = new KatexRenderer([
             'version' => '0.16.28',
-            'cdn' => 'https://example.com"><script>alert(1)</script><a href="',
+            'cdn' => 'https://cdn.jsdelivr.net/npm/katex',
+            'css_integrity' => '"><script>alert(1)</script>',
             'options' => [
                 'delimiters' => [],
             ],
