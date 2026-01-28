@@ -1,0 +1,27 @@
+{
+    "name": "akramzaitout/laravel-katex",
+    "description": "Zero-config KaTeX Blade directives for Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Akram Zaitout",
+            "email": "akramzaitout@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "AkramZaitout\\LaravelKatex\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AkramZaitout\\LaravelKatex\\KatexServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^9.0|^10.0|^11.0"
+    }
+}
