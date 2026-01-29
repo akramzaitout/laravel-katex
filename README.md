@@ -248,7 +248,7 @@ return [
 
 ## 🎓 Examples
 
-### Educational Content
+
 
 ```blade
 <article class="lesson">
@@ -264,43 +264,7 @@ return [
 </article>
 ```
 
-### Scientific Documentation
 
-```blade
-<div class="physics-formulas">
-    <h3>Schrödinger Equation</h3>
-    @katexBlock('i\hbar\frac{\partial}{\partial t}\Psi = \hat{H}\Psi')
-    
-    <h3>Maxwell's Equations</h3>
-    @katexBlock('\begin{aligned}
-        \nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0} \\
-        \nabla \cdot \mathbf{B} &= 0 \\
-        \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
-        \nabla \times \mathbf{B} &= \mu_0\mathbf{J} + \mu_0\epsilon_0\frac{\partial \mathbf{E}}{\partial t}
-    \end{aligned}')
-</div>
-```
-
-### Dynamic Content
-
-```blade
-@php
-    $equations = [
-        'Pythagorean Theorem' => 'a^2 + b^2 = c^2',
-        'Euler\'s Identity' => 'e^{i\pi} + 1 = 0',
-        'Einstein\'s Mass-Energy' => 'E = mc^2',
-    ];
-@endphp
-
-<ul class="famous-equations">
-    @foreach($equations as $name => $equation)
-        <li>
-            <strong>{{ $name }}:</strong>
-            @katex($equation)
-        </li>
-    @endforeach
-</ul>
-```
 
 ## 🔒 Security
 
@@ -331,45 +295,9 @@ By default, `\url` and `\href` commands are disabled. Enable only if needed:
 ],
 ```
 
-## 🔄 Updating KaTeX
 
-To update to a new KaTeX version:
 
-1. Update version in `config/katex.php` or `.env`
-2. Get new SRI hashes from [jsDelivr](https://www.jsdelivr.com/package/npm/katex)
-3. Update integrity values in config
 
-```php
-'version' => '0.16.28',
-'css_integrity' => 'sha384-new-hash',
-'js_integrity' => 'sha384-new-hash',
-'auto_render_integrity' => 'sha384-new-hash',
-```
-
-## 🐛 Troubleshooting
-
-### Math Not Rendering
-
-1. Check browser console for errors
-2. Ensure `@katexStyles` is in `<head>`
-3. Ensure `@katexScripts` is before `</body>`
-4. Verify delimiters match your content
-
-### Single Dollar Signs Not Working
-
-Enable in configuration:
-
-```php
-'options' => [
-    'delimiters' => [
-        ['left' => '$', 'right' => '$', 'display' => false],
-    ],
-],
-```
-
-### Styling Issues
-
-Ensure KaTeX CSS loads before your custom CSS.
 
 ## 🤝 Contributing
 
@@ -387,12 +315,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📝 License
 
 This package is open-sourced software licensed under the [MIT license](LICENSE.md).
-
-## 📚 Resources
-
-- [KaTeX Documentation](https://katex.org/docs/api.html)
-- [KaTeX Supported Functions](https://katex.org/docs/supported.html)
-- [LaTeX Mathematics Guide](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
 
 ---
 

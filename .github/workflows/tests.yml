@@ -24,7 +24,9 @@ jobs:
           - laravel: 12.*
             php: 7.4
           - laravel: 12.*
-            php: 8.0 # If Laravel 12 requires 8.1+, adjust this
+            php: 8.0
+          - laravel: 12.*
+            php: 8.1
           # Laravel 11 incompatible PHP versions
           - laravel: 11.*
             php: 7.2
