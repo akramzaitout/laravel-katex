@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.3] - 2026-01-29
+
+### 🔨 Chores
+
+- Bump package version to 1.0.2 (e0dfb436f43a8b55d26f665266c3fa77537ab1d9)
+
 ## [0.0.1] - 2026-01-29
 
 ### 👷 CI/CD
