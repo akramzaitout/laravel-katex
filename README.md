@@ -5,11 +5,27 @@
 </p>
 
 <p align="center">
-    <a href="https://packagist.org/packages/akram-zaitout/laravel-katex"><img src="https://img.shields.io/packagist/v/akram-zaitout/laravel-katex.svg?style=flat-square" alt="Latest Version on Packagist"></a>
-    <a href="https://github.com/akram-zaitout/laravel-katex/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/akram-zaitout/laravel-katex/tests.yml?branch=main&label=tests&style=flat-square" alt="GitHub Tests Action Status"></a>
-    <a href="https://packagist.org/packages/akram-zaitout/laravel-katex"><img src="https://img.shields.io/packagist/dt/akram-zaitout/laravel-katex.svg?style=flat-square" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/akram-zaitout/laravel-katex"><img src="https://img.shields.io/packagist/l/akram-zaitout/laravel-katex.svg?style=flat-square" alt="License"></a>
+  <a href="https://packagist.org/packages/akram-zaitout/laravel-katex">
+    <img src="https://img.shields.io/packagist/v/akram-zaitout/laravel-katex?style=flat-square"
+         alt="Latest Version on Packagist">
+  </a>
+
+  <a href="https://github.com/akram-zaitout/laravel-katex/actions/workflows/tests.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/akram-zaitout/laravel-katex/tests.yml?label=Tests&style=flat-square"
+         alt="GitHub Tests Status">
+  </a>
+
+  <a href="https://packagist.org/packages/akram-zaitout/laravel-katex">
+    <img src="https://img.shields.io/packagist/dt/akram-zaitout/laravel-katex?style=flat-square"
+         alt="Total Downloads">
+  </a>
+
+  <a href="https://packagist.org/packages/akram-zaitout/laravel-katex">
+    <img src="https://img.shields.io/packagist/l/akram-zaitout/laravel-katex?style=flat-square"
+         alt="License">
+  </a>
 </p>
+
 
 A comprehensive, production-ready Laravel package for rendering beautiful mathematical expressions using [KaTeX](https://katex.org/). Native PHP implementation with dependency injection, following Laravel best practices.
 
