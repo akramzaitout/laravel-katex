@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.4] - 2026-01-29
+
+### 🔨 Chores
+
+- Add .gitattributes for consistent line endings and export ignores (11ac8dee1a4bc5827127d05726c7ab1bc35e9749)
+
+### 📦 Other Changes
+
+- Akramzaitout ()
+
 ## [1.0.3] - 2026-01-29
 
 ### 🔨 Chores
