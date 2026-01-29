@@ -24,6 +24,10 @@
     <img src="https://img.shields.io/packagist/l/akram-zaitout/laravel-katex?style=flat-square"
          alt="License">
   </a>
+  <br>
+  <a href="https://www.buymeacoffee.com/akramzaitout">
+    <img src="./assets/buy-me-a-coffee.png" alt="Buy Me A Coffee" height="40">
+  </a>
 </p>
 
 
@@ -334,4 +338,4 @@ This package is open-sourced software licensed under the [MIT license](LICENSE.m
 
 ---
 
-<p align="center">Made with ❤️ by <a href="https://github.com/akramzaitout">Akram Zaitout</a></p>
+<p align="center">Made with ❤️ by <a href="https://github.com/akramzaitout">Akram Zaitout</a> &nbsp;&bull;&nbsp; <a href="https://www.buymeacoffee.com/akramzaitout">Buy me a coffee</a></p>
