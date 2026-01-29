@@ -4,24 +4,29 @@
   <img src="./assets/logo.png" alt="Laravel KaTeX Package Logo" width="200" />
 </p>
 
-A comprehensive, production-ready Laravel package for rendering beautiful mathematical expressions using [KaTeX](https://katex.org/). Built with modern PHP 8.1+ features, dependency injection, and following Laravel best practices.
+<p align="center">
+    <a href="https://packagist.org/packages/akram-zaitout/laravel-katex"><img src="https://img.shields.io/packagist/v/akram-zaitout/laravel-katex.svg?style=flat-square" alt="Latest Version on Packagist"></a>
+    <a href="https://github.com/akram-zaitout/laravel-katex/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/akram-zaitout/laravel-katex/tests.yml?branch=main&label=tests&style=flat-square" alt="GitHub Tests Action Status"></a>
+    <a href="https://packagist.org/packages/akram-zaitout/laravel-katex"><img src="https://img.shields.io/packagist/dt/akram-zaitout/laravel-katex.svg?style=flat-square" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/akram-zaitout/laravel-katex"><img src="https://img.shields.io/packagist/l/akram-zaitout/laravel-katex.svg?style=flat-square" alt="License"></a>
+</p>
+
+A comprehensive, production-ready Laravel package for rendering beautiful mathematical expressions using [KaTeX](https://katex.org/). Native PHP implementation with dependency injection, following Laravel best practices.
 
 ## ✨ Features
 
-- 🎯 **Clean Architecture** - Separation of concerns with dedicated services, compilers, and validators
 - 🔒 **Security First** - XSS protection, SRI hashes, and input validation
 - 🚀 **Performance** - Efficient rendering with optional caching support
 - 📝 **Multiple APIs** - Blade directives, Facade, helper functions, and Blade components
 - ⚙️ **Highly Configurable** - Extensive configuration options with sensible defaults
 - 🧪 **Well Tested** - Comprehensive unit and feature tests
 - 📚 **Fully Documented** - Detailed PHPDoc comments and documentation
-- 🎨 **Type Safe** - Full PHP 8.1+ type hints and strict types
-- 🔄 **Auto-Discovery** - Automatic package discovery for Laravel 10+
+- 🔄 **Auto-Discovery** - Automatic package discovery for Laravel
 
 ## 📋 Requirements
 
-- PHP 8.1 or higher
-- Laravel 10.x or 11.x
+- PHP 7.2 or higher
+- Laravel 6.0 or higher
 - ext-json
 
 ## 📦 Installation
@@ -297,24 +302,6 @@ return [
 </ul>
 ```
 
-## 🧪 Testing
-
-Run the test suite:
-
-```bash
-# Run all tests
-composer test
-
-# Run with coverage
-composer test-coverage
-
-# Run static analysis
-composer analyse
-
-# Format code
-composer format
-```
-
 ## 🔒 Security
 
 ### XSS Protection
@@ -342,24 +329,6 @@ By default, `\url` and `\href` commands are disabled. Enable only if needed:
 'options' => [
     'trust' => false, // Keep disabled for user-generated content
 ],
-```
-
-## 📊 Architecture
-
-```
-src/
-├── Compilers/
-│   └── KatexBladeCompiler.php    # Blade directive compilation
-├── Exceptions/
-│   └── InvalidKatexConfigurationException.php
-├── Facades/
-│   └── Katex.php                  # Facade for easy access
-├── Services/
-│   └── KatexRenderer.php          # Core rendering logic
-├── Support/
-│   └── ConfigValidator.php        # Configuration validation
-├── KatexServiceProvider.php       # Service provider
-└── helpers.php                     # Helper functions
 ```
 
 ## 🔄 Updating KaTeX
@@ -419,12 +388,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This package is open-sourced software licensed under the [MIT license](LICENSE.md).
 
-## 🙏 Credits
-
-- [KaTeX](https://katex.org/) - The math typesetting library
-- [Laravel](https://laravel.com/) - The PHP framework
-- [Akram Zaitout](https://github.com/akram-zaitout) - Package author
-
 ## 📚 Resources
 
 - [KaTeX Documentation](https://katex.org/docs/api.html)
@@ -433,4 +396,4 @@ This package is open-sourced software licensed under the [MIT license](LICENSE.m
 
 ---
 
-<p align="center">Made with ❤️ by <a href="https://github.com/akram-zaitout">Akram Zaitout</a></p>
+<p align="center">Made with ❤️ by <a href="https://github.com/akramzaitout">Akram Zaitout</a></p>
