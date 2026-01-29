@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.6] - 2026-01-29
+
+### 📚 Documentation
+
+- Add Buy Me A Coffee link to README (6152f9a3d241ace973f5452c988d27526e2342d8)
+
+### 📦 Other Changes
+
+- Akramzaitout ()
+
 ## [1.0.5] - 2026-01-29
 
 ### 📚 Documentation
