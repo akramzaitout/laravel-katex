@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.5] - 2026-01-29
+
+### 📚 Documentation
+
+- Improve README formatting and badge readability (67242345b01cbd84dcf039c37a776d2928d9d033)
+
+### 📦 Other Changes
+
+- Akramzaitout ()
+
 ## [1.0.4] - 2026-01-29
 
 ### 🔨 Chores
