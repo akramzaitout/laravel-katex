@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.2] - 2026-01-30
+
+### 👷 CI/CD
+
+- Restructure test matrix to include only valid PHP/Laravel combos (54db55807983dcdbac200e6fb7d234b5c018bed7)
+- Restructure workflow to test all PHP/Laravel combos (289dc1b5b77a6383340f2a44a9fef64e34d9fe23)
+
+### 📦 Other Changes
+
+- Akramzaitout ()
+- Akramzaitout ()
+
 ## [1.2.1] - 2026-01-30
 
 ### 👷 CI/CD
