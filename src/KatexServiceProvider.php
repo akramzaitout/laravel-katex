@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace AkramZaitout\LaravelKatex;
 
 use AkramZaitout\LaravelKatex\Compilers\KatexBladeCompiler;
+use AkramZaitout\LaravelKatex\Console\KatexDownloadCommand;
 use AkramZaitout\LaravelKatex\Services\KatexRenderer;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Blade;
@@ -31,6 +32,12 @@ class KatexServiceProvider extends ServiceProvider
         $this->publishViews();
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'katex');
         $this->registerBladeDirectives();
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                KatexDownloadCommand::class,
+            ]);
+        }
     }
 
     /**

@@ -13,6 +13,17 @@ use PHPUnit\Framework\TestCase;
  */
 class KatexRendererTest extends TestCase
 {
+    public static function setUpBeforeClass(): void
+    {
+        if (! function_exists('AkramZaitout\LaravelKatex\Services\asset')) {
+            eval('
+                namespace AkramZaitout\LaravelKatex\Services;
+                function asset($path) {
+                    return "http://localhost/" . ltrim($path, "/");
+                }
+            ');
+        }
+    }
     protected $renderer;
 
     protected function setUp(): void
@@ -137,5 +148,25 @@ class KatexRendererTest extends TestCase
 
         $stylesheet = $renderer->generateStylesheet();
         $this->assertStringNotContainsString('integrity=', $stylesheet);
+    }
+
+    public function test_it_generates_local_assets_links_when_configured(): void
+    {
+        $renderer = new KatexRenderer([
+            'version' => '0.16.28',
+            'cdn' => 'https://cdn.jsdelivr.net/npm/katex',
+            'use_local_assets' => true, // Enable local assets
+            'options' => [
+                'delimiters' => [],
+            ],
+        ]);
+        $stylesheet = $renderer->generateStylesheet();
+        $this->assertStringContainsString('href="http://localhost/vendor/katex/katex.min.css"', $stylesheet);
+        $this->assertStringNotContainsString('cdn.jsdelivr.net', $stylesheet);
+        $this->assertStringNotContainsString('integrity=', $stylesheet);
+        $scripts = $renderer->generateScripts();
+        $this->assertStringContainsString('src="http://localhost/vendor/katex/katex.min.js"', $scripts);
+        $this->assertStringContainsString('src="http://localhost/vendor/katex/contrib/auto-render.min.js"', $scripts);
+        $this->assertStringNotContainsString('cdn.jsdelivr.net', $scripts);
     }
 }

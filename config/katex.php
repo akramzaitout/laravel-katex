@@ -19,6 +19,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Use Local Assets
+    |--------------------------------------------------------------------------
+    |
+    | When set to true, KaTeX assets (CSS, JS, fonts) will be loaded from
+    | the local public/vendor/katex directory instead of the CDN.
+    | Run 'php artisan katex:download' to download the assets.
+    |
+    */
+    'use_local_assets' => env('KATEX_USE_LOCAL_ASSETS', false),
+
+    /*
+    |--------------------------------------------------------------------------
     | CDN Base URL
     |--------------------------------------------------------------------------
     |

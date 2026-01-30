@@ -264,6 +264,30 @@ return [
 ];
 ```
 
+## 🌍 Local Asset Management (Offline Support)
+
+This package supports downloading KaTeX assets to your local application, allowing you to run without external CDN dependencies. This is perfect for offline environments, intranets, or strict privacy compliance/GDPR.
+
+### 1. Download Assets
+Run the artisan command to download CSS, JS, and font files to `public/vendor/katex`:
+
+```bash
+php artisan katex:download
+```
+
+### 2. Enable Local Assets
+Update your `.env` file to tell the package to use the local files:
+
+```env
+KATEX_USE_LOCAL_ASSETS=true
+```
+
+Or configure it in `config/katex.php`:
+
+```php
+'use_local_assets' => true,
+```
+
 ## 🎓 Examples
 
 
