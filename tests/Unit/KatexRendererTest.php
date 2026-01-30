@@ -6,13 +6,24 @@ namespace AkramZaitout\LaravelKatex\Tests\Unit;
 
 use AkramZaitout\LaravelKatex\Exceptions\InvalidKatexConfigurationException;
 use AkramZaitout\LaravelKatex\Services\KatexRenderer;
-use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Unit tests for KatexRenderer service.
  */
 class KatexRendererTest extends TestCase
 {
+    public static function setUpBeforeClass(): void
+    {
+        if (! function_exists('AkramZaitout\LaravelKatex\Services\asset')) {
+            eval('
+                namespace AkramZaitout\LaravelKatex\Services;
+                function asset($path) {
+                    return "http://localhost/" . ltrim($path, "/");
+                }
+            ');
+        }
+    }
     protected $renderer;
 
     protected function setUp(): void
