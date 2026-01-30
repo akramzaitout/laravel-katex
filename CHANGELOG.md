@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.7] - 2026-01-30
+
+### 📚 Documentation
+
+- Remove contributing guidelines and refine README features. (5832f99e1b24e722750a42e052127e5f820b9bdc)
+
 ## [1.0.6] - 2026-01-29
 
 ### 📚 Documentation
