@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.5] - 2026-01-30
+
+### 🔨 Chores
+
+- Update author email in composer.json (d2cb4de59e786057a0fbf80ae26953d98d896897)
+
+### 📦 Other Changes
+
+- Akramzaitout ()
+
 ## [1.2.4] - 2026-01-30
 
 ### 👷 CI/CD
