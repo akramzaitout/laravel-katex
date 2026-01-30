@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.2.0] - 2026-01-30
+
+### ✨ Features
+
+- Add version option to download command (f582ad45ba1a02d4d5ebc9241c1167399ccca163)
+
+### 🐛 Bug Fixes
+
+- Add `static $latestResponse` property to `KatexDownloadCommandTest` to resolve Testbench compatibility issues. (5879c15b3e08775c220b198d73a0f516eead56f1)
+
+### 📦 Other Changes
+
+- Merge pull request #4 from akramzaitout/feat/download-command-version (0ff4bc0277a195c06c4f3b63c518e75c3beb2a7e)
+- Akramzaitout ()
+
 ## [1.1.0] - 2026-01-30
 
 ### ✨ Features
