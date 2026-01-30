@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.4] - 2026-01-30
+
+### 👷 CI/CD
+
+- Split test matrix into separate lowest and stable runs (f1c197b4ddca3100826c873cb8bc5a8dd39594d8)
+
+### 📦 Other Changes
+
+- Akramzaitout ()
+
 ## [1.2.3] - 2026-01-30
 
 ### 👷 CI/CD
