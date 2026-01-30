@@ -275,6 +275,12 @@ Run the artisan command to download CSS, JS, and font files to `public/vendor/ka
 php artisan katex:download
 ```
 
+You can also specify a specific version:
+
+```bash
+php artisan katex:download --version=0.16.0
+```
+
 ### 2. Enable Local Assets
 Update your `.env` file to tell the package to use the local files:
 

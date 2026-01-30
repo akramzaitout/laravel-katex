@@ -15,7 +15,8 @@ class KatexDownloadCommand extends Command
      * @var string
      */
     protected $signature = 'katex:download
-                          {--force : Overwrite existing files}';
+                          {--force : Overwrite existing files}
+                          {--version= : Specify the KaTeX version to download}';
 
     /**
      * The console command description.
@@ -41,10 +42,17 @@ class KatexDownloadCommand extends Command
             }
         }
 
+        $version = $this->option('version') ?? config('katex.version', '0.16.28');
+
+        // Update configuration if version was specified via option
+        if ($this->option('version')) {
+            $this->updateEnvVersion($version);
+            $this->info("Updated KATEX_VERSION in .env to {$version}");
+        }
+
         $this->ensureDirectoryExists($publicPath);
 
         // Configuration
-        $version = config('katex.version', '0.16.28');
         $cdn = rtrim(config('katex.cdn', 'https://cdn.jsdelivr.net/npm/katex'), '/');
         
         // Handle CDN URL format
@@ -137,6 +145,23 @@ class KatexDownloadCommand extends Command
     {
         if (! File::isDirectory($path)) {
             File::makeDirectory($path, 0755, true);
+        }
+    }
+
+    protected function updateEnvVersion(string $version): void
+    {
+        $envPath = base_path('.env');
+
+        if (File::exists($envPath)) {
+            $envContent = File::get($envPath);
+
+            if (preg_match('/^KATEX_VERSION=/m', $envContent)) {
+                 $envContent = preg_replace('/^KATEX_VERSION=.*$/m', 'KATEX_VERSION=' . $version, $envContent);
+            } else {
+                 $envContent .= "\nKATEX_VERSION=" . $version;
+            }
+
+            File::put($envPath, $envContent);
         }
     }
 
