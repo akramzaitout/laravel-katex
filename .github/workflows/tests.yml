@@ -10,63 +10,71 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: [7.2, 7.3, 7.4, 8.0, 8.1, 8.2, 8.3, 8.4]
-        laravel: [6.*, 7.*, 8.*, 9.*, 10.*, 11.*, 12.*]
-        dependency-version: [prefer-lowest, prefer-stable]
-
-        # Exclude incompatible PHP/Laravel combinations
-        exclude:
-          # Laravel 12 requires PHP >= 8.2
-          - laravel: 12.*
-            php: 7.2
-          - laravel: 12.*
-            php: 7.3
-          - laravel: 12.*
-            php: 7.4
-          - laravel: 12.*
-            php: 8.0
-          - laravel: 12.*
-            php: 8.1
-
-          # Laravel 11 requires PHP >= 8.2
-          - laravel: 11.*
-            php: 7.2
-          - laravel: 11.*
-            php: 7.3
-          - laravel: 11.*
-            php: 7.4
-          - laravel: 11.*
-            php: 8.0
-          - laravel: 11.*
-            php: 8.1
-
-          # Laravel 10 requires PHP >= 8.1
-          - laravel: 10.*
-            php: 7.2
-          - laravel: 10.*
-            php: 7.3
-          - laravel: 10.*
-            php: 7.4
-          - laravel: 10.*
-            php: 8.0
-
-          # Laravel 9 requires PHP >= 8.0
-          - laravel: 9.*
-            php: 7.2
-          - laravel: 9.*
-            php: 7.3
-          - laravel: 9.*
-            php: 7.4
-
-          # Laravel 8 requires PHP >= 7.3
-          - laravel: 8.*
-            php: 7.2
-
-          # Laravel 7 and 6 are incompatible with PHP >= 8.1
-          - laravel: 7.*
-            php: [8.1, 8.2, 8.3, 8.4]
+        # Only include PHP versions that actually work for each Laravel version
+        include:
+          # Laravel 6 supports PHP 7.2 – 8.0
           - laravel: 6.*
-            php: [8.1, 8.2, 8.3, 8.4]
+            php: 7.2
+          - laravel: 6.*
+            php: 7.3
+          - laravel: 6.*
+            php: 7.4
+          - laravel: 6.*
+            php: 8.0
+
+          # Laravel 7 supports PHP 7.2 – 8.0
+          - laravel: 7.*
+            php: 7.2
+          - laravel: 7.*
+            php: 7.3
+          - laravel: 7.*
+            php: 7.4
+          - laravel: 7.*
+            php: 8.0
+
+          # Laravel 8 supports PHP 7.3 – 8.1
+          - laravel: 8.*
+            php: 7.3
+          - laravel: 8.*
+            php: 7.4
+          - laravel: 8.*
+            php: 8.0
+          - laravel: 8.*
+            php: 8.1
+
+          # Laravel 9 supports PHP 8.0 – 8.2
+          - laravel: 9.*
+            php: 8.0
+          - laravel: 9.*
+            php: 8.1
+          - laravel: 9.*
+            php: 8.2
+
+          # Laravel 10 supports PHP 8.1 – 8.3
+          - laravel: 10.*
+            php: 8.1
+          - laravel: 10.*
+            php: 8.2
+          - laravel: 10.*
+            php: 8.3
+
+          # Laravel 11 supports PHP 8.2 – 8.4
+          - laravel: 11.*
+            php: 8.2
+          - laravel: 11.*
+            php: 8.3
+          - laravel: 11.*
+            php: 8.4
+
+          # Laravel 12 supports PHP 8.2 – 8.4
+          - laravel: 12.*
+            php: 8.2
+          - laravel: 12.*
+            php: 8.3
+          - laravel: 12.*
+            php: 8.4
+
+        dependency-version: [prefer-lowest, prefer-stable]
 
     name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
