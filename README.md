@@ -35,13 +35,11 @@ A comprehensive, production-ready Laravel package for rendering beautiful mathem
 
 ## ✨ Features
 
-- 🔒 **Security First** - XSS protection, SRI hashes, and input validation
-- 🚀 **Performance** - Efficient rendering with optional caching support
-- 📝 **Multiple APIs** - Blade directives, Facade, helper functions, and Blade components
-- ⚙️ **Highly Configurable** - Extensive configuration options with sensible defaults
-- 🧪 **Well Tested** - Comprehensive unit and feature tests
-- 📚 **Fully Documented** - Detailed PHPDoc comments and documentation
-- 🔄 **Auto-Discovery** - Automatic package discovery for Laravel
+- � **Flexible & Intuitive** - Use it your way with Blade directives, components, or our Facade—whatever fits your coding style.
+- 🔒 **Secure by Design** - We handle XSS protection and validation automatically so you can render user content with peace of mind.
+- ⚙️ **Fully Customizable** - Tweak delimiters, error handling, and macros globally or on the fly to match your specific needs.
+- 🚀 **Blazing Fast** - Optimized rendering ensures your mathematical expressions load instantly without slowing down your app.
+- 🧪 **Production Ready** - Built with a comprehensive test suite and strict typing to ensure reliability in mission-critical applications.
 
 ## 📋 Requirements
 
@@ -314,23 +312,6 @@ By default, `\url` and `\href` commands are disabled. Enable only if needed:
     'trust' => false, // Keep disabled for user-generated content
 ],
 ```
-
-
-
-
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Run tests (`composer test`)
-4. Run static analysis (`composer analyse`)
-5. Format code (`composer format`)
-6. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-7. Push to the branch (`git push origin feature/AmazingFeature`)
-8. Open a Pull Request
 
 ## 📝 License
 
