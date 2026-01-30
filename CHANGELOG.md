@@ -1,5 +1,47 @@
 # Changelog
 
+## [1.1.0] - 2026-01-30
+
+### ✨ Features
+
+- Add support for local KaTeX assets (6ed8d7f1142bee99ff5ec5cf3b7ebdbb0ef61b71)
+- Add option to load KaTeX assets locally (9bf40feaf8bd09d77b53417e8c70991b83cbf6c3)
+- Add console command for downloading KaTeX assets (39fc00c3e9ea0ccc23a6dfc8c56f9d4833fe6fa3)
+- Add console command to download KaTeX assets for offline use (1e681355f190bcfec5240fc8bcba8e78e2077733)
+
+### ♻️  Refactoring
+
+- Replace Orchestra Testbench TestCase with PHPUnit's and add a mock for the asset helper function. (afb7459e6c6434982fa824205580ad7362d704a7)
+
+### 📚 Documentation
+
+- Add local asset management section to README (d19a23d33df8cd2761a7fba53aa056ca34dfb2a9)
+
+### ✅ Tests
+
+- Switch to Orchestra Testbench for Laravel testing (9734fdae9ee58e179dba2d9fc5c35c008e3fac9e)
+- Add test for local assets generation in KatexRenderer (cada2cb55dfe7c46fc38fbb8803a1c81b5bb9c97)
+
+### 👷 CI/CD
+
+- Remove branch filtering for push and pull request triggers in tests workflow. (fa41ae0df2b6b4b36de3a6af481894c3a8e45f4d)
+
+### 📦 Other Changes
+
+- Merge pull request #3 from akramzaitout/feat/local-assets-support (c1aaf1b2f7e89510310e4c252567101dfe5b2aa6)
+- Akramzaitout ()
+-  (Include instructions for downloading assets and enabling local mode.)
+- Akramzaitout ()
+-  (local asset links when the 'use_local_assets' configuration option is)
+-  (enabled. The test ensures CSS and JS links point to local vendor paths)
+-  (and do not contain CDN URLs or integrity attributes.)
+- Akramzaitout ()
+-  (The changes modify the `getCssTag` and `getScripts` methods to conditionally use the `asset()` helper for local paths when the configuration is enabled, while preserving the CDN fallback for backward compatibility.)
+- Akramzaitout ()
+- Akramzaitout ()
+- Akramzaitout ()
+- Akramzaitout ()
+
 ## [1.0.7] - 2026-01-30
 
 ### 📚 Documentation
