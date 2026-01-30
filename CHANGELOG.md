@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.3] - 2026-01-30
+
+### 👷 CI/CD
+
+- Rewrite tests workflow to use explicit PHP/Laravel matrix (b382f311855c294af1d89995b0c18cf937f35df9)
+- Simplify and expand test matrix configuration (e3788062d2168637c1e44b52624f6bc5d0d7c715)
+
+### 📦 Other Changes
+
+-  (Also simplify dependency installation by requiring the full Laravel framework instead of individual components, and remove the imagick extension from the setup as it's not required for core functionality.)
+- Akramzaitout ()
+- Akramzaitout ()
+
 ## [1.2.2] - 2026-01-30
 
 ### 👷 CI/CD
