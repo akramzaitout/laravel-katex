@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.1] - 2026-01-30
+
+### 👷 CI/CD
+
+- Simplify workflow matrix to supported PHP/Laravel pairs (1b05b187e03f87b33b0fa3982ef0a8992a9949c8)
+
+### 📦 Other Changes
+
+- Akramzaitout ()
+
 ## [1.2.0] - 2026-01-30
 
 ### ✨ Features
