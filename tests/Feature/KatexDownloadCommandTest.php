@@ -10,6 +10,12 @@ use Orchestra\Testbench\TestCase;
 
 class KatexDownloadCommandTest extends TestCase
 {
+    /**
+     * Fix for "Access to undeclared static property" in newer Testbench versions.
+     * @var \Illuminate\Testing\TestResponse|null
+     */
+    public static $latestResponse = null;
+
     protected function getPackageProviders($app): array
     {
         return [
