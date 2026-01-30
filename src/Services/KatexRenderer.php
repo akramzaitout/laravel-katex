@@ -80,7 +80,18 @@ class KatexRenderer
             'href' => sprintf('%s@%s/dist/katex.min.css', e($cdn), e($version)),
             'crossorigin' => 'anonymous',
         ];
-
+        if ($this->getConfig('use_local_assets', false)) {
+            $attributes = [
+                'rel' => 'stylesheet',
+                'href' => asset('vendor/katex/katex.min.css'),
+            ];
+        } else {
+            $attributes = [
+                'rel' => 'stylesheet',
+                'href' => sprintf('%s@%s/dist/katex.min.css', e($cdn), e($version)),
+                'crossorigin' => 'anonymous',
+            ];
+        }
         if (! empty($integrity)) {
             $attributes['integrity'] = e($integrity);
         }
@@ -110,7 +121,14 @@ class KatexRenderer
             sprintf('%s@%s/dist/katex.min.js', $cdn, $version),
             $jsIntegrity
         );
-
+        if ($this->getConfig('use_local_assets', false)) {
+            $scripts[] = $this->buildScriptTag(asset('vendor/katex/katex.min.js'));
+        } else {
+            $scripts[] = $this->buildScriptTag(
+                sprintf('%s@%s/dist/katex.min.js', $cdn, $version),
+                $jsIntegrity
+            );
+        }
         // Auto-render extension with onload callback
         $onload = sprintf('renderMathInElement(document.body, %s);', $jsonOptions);
         $scripts[] = $this->buildScriptTag(
@@ -118,7 +136,20 @@ class KatexRenderer
             $autoRenderIntegrity,
             $onload
         );
-
+        
+        if ($this->getConfig('use_local_assets', false)) {
+            $scripts[] = $this->buildScriptTag(
+                asset('vendor/katex/contrib/auto-render.min.js'),
+                '',
+                $onload
+            );
+        } else {
+            $scripts[] = $this->buildScriptTag(
+                sprintf('%s@%s/dist/contrib/auto-render.min.js', $cdn, $version),
+                $autoRenderIntegrity,
+                $onload
+            );
+        }
         return implode("\n", $scripts);
     }
 
