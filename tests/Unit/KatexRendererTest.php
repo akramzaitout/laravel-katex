@@ -6,7 +6,7 @@ namespace AkramZaitout\LaravelKatex\Tests\Unit;
 
 use AkramZaitout\LaravelKatex\Exceptions\InvalidKatexConfigurationException;
 use AkramZaitout\LaravelKatex\Services\KatexRenderer;
-use PHPUnit\Framework\TestCase;
+use Orchestra\Testbench\TestCase;
 
 /**
  * Unit tests for KatexRenderer service.

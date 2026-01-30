@@ -116,11 +116,6 @@ class KatexRenderer
 
         $scripts = [];
 
-        // KaTeX core script
-        $scripts[] = $this->buildScriptTag(
-            sprintf('%s@%s/dist/katex.min.js', $cdn, $version),
-            $jsIntegrity
-        );
         if ($this->getConfig('use_local_assets', false)) {
             $scripts[] = $this->buildScriptTag(asset('vendor/katex/katex.min.js'));
         } else {
@@ -131,11 +126,6 @@ class KatexRenderer
         }
         // Auto-render extension with onload callback
         $onload = sprintf('renderMathInElement(document.body, %s);', $jsonOptions);
-        $scripts[] = $this->buildScriptTag(
-            sprintf('%s@%s/dist/contrib/auto-render.min.js', $cdn, $version),
-            $autoRenderIntegrity,
-            $onload
-        );
         
         if ($this->getConfig('use_local_assets', false)) {
             $scripts[] = $this->buildScriptTag(
