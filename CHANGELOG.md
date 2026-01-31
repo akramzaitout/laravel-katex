@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.3.0] - 2026-01-31
+
+### ✨ Features
+
+- Add integration service and exception (f9a802961104a6b666ad6a7c67dbc28477ad06e5)
+- Add Livewire integration support to KatexRenderer (8865a7b67ab07794d49fb9a8549e343afd298baa)
+- Add Livewire integration option to KaTeX config (aa31f6cec4d555f6df24df32bd2e68a8c6af62bf)
+
+### ✅ Tests
+
+- Add Livewire integration tests (20a695bbb590d83c2c39a9cce9c8ece7b6357677)
+
+### 👷 CI/CD
+
+- Remove branch filter from push trigger in tests workflow (169541c6e63c577a77c6b4a0f4d64c7339569bfc)
+
+### 📦 Other Changes
+
+- Merge pull request #5 from akramzaitout/feature/livewire-integration (737f047255686c655b37d950f5c40f095f9d8afc)
+- Akramzaitout ()
+-  (Livewire is missing or present. Tests cover exception handling, script)
+-  (generation, and configuration-based integration enabling/disabling.)
+- Akramzaitout ()
+-  (after Livewire DOM updates. This ensures mathematical expressions are)
+-  (properly rendered when Livewire components update asynchronously.)
+-  (Add LivewireNotInstalledException to handle cases where Livewire is)
+-  (not present in the project.)
+- Akramzaitout ()
+- Akramzaitout ()
+- Akramzaitout ()
+
 ## [1.2.5] - 2026-01-30
 
 ### 🔨 Chores
