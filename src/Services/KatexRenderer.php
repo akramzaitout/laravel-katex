@@ -28,16 +28,23 @@ class KatexRenderer
     protected $validator;
 
     /**
+     * Livewire integration service.
+     */
+    protected $livewireIntegrator;
+
+    /**
      * Create a new KatexRenderer instance.
      *
      * @param  array<string, mixed>  $config
+     * @param  LivewireIntegrator|null  $livewireIntegrator
      *
      * @throws InvalidKatexConfigurationException
      */
-    public function __construct(array $config)
+    public function __construct(array $config, ?LivewireIntegrator $livewireIntegrator = null)
     {
         $this->validator = new ConfigValidator;
         $this->setConfig($config);
+        $this->livewireIntegrator = $livewireIntegrator ?? new LivewireIntegrator();
     }
 
     /**
@@ -140,6 +147,11 @@ class KatexRenderer
                 $onload
             );
         }
+
+        if ($this->getConfig('livewire', false)) {
+            $scripts[] = $this->livewireIntegrator->generateScript($jsonOptions);
+        }
+
         return implode("\n", $scripts);
     }
 
