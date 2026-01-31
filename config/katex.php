@@ -254,6 +254,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Livewire Integration
+    |--------------------------------------------------------------------------
+    |
+    | Enable specific support for Laravel Livewire.
+    | When enabled, a script will be injected to listen for Livewire events
+    | and re-render KaTeX expressions when the DOM updates.
+    |
+    */
+    'livewire' => env('KATEX_LIVEWIRE', false),
+
+    /*
+    |--------------------------------------------------------------------------
     | Performance Options
     |--------------------------------------------------------------------------
     |
