@@ -10,11 +10,6 @@
          alt="Latest Version on Packagist">
   </a>
 
-  <a href="https://github.com/akram-zaitout/laravel-katex/actions/workflows/tests.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/akram-zaitout/laravel-katex/tests.yml?label=Tests&style=flat-square"
-         alt="GitHub Tests Status">
-  </a>
-
   <a href="https://packagist.org/packages/akram-zaitout/laravel-katex">
     <img src="https://img.shields.io/packagist/dt/akram-zaitout/laravel-katex?style=flat-square"
          alt="Total Downloads">
