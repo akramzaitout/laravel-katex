@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.1] - 2026-02-08
+
+### 📦 Other Changes
+
+- Update README.md (be9a950dc9eccf6d47e7f7eedda2987eaa74a428)
+
 ## [1.3.0] - 2026-01-31
 
 ### ✨ Features
