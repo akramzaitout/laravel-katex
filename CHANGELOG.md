@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.2] - 2026-03-10
+
+### 📦 Other Changes
+
+- Update funding information in FUNDING.yml (d4272fab538ca7e4817afff1a2f0c3675a977370)
+
 ## [1.3.1] - 2026-02-08
 
 ### 📦 Other Changes
