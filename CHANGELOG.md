@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3] - 2026-03-10
+
+### 📦 Other Changes
+
+- Update README to remove coffee donation link (a1d902cf4f25a995509bedcfd4d83b25f50329ed)
+- Update README to remove donation link (27cf5a14fb9ee870b4935634f664e62c8cd03fb5)
+
 ## [1.3.2] - 2026-03-10
 
 ### 📦 Other Changes
