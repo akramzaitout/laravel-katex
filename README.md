@@ -19,10 +19,6 @@
     <img src="https://img.shields.io/packagist/l/akram-zaitout/laravel-katex?style=flat-square"
          alt="License">
   </a>
-  <br>
-  <a href="https://www.buymeacoffee.com/akramzaitout">
-    <img src="./assets/buy-me-a-coffee.png" alt="Buy Me A Coffee" height="40">
-  </a>
 </p>
 
 
