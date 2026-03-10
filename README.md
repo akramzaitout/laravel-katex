@@ -340,4 +340,4 @@ This package is open-sourced software licensed under the [MIT license](LICENSE.m
 
 ---
 
-<p align="center">Made with ❤️ by <a href="https://github.com/akramzaitout">Akram Zaitout</a> &nbsp;&bull;&nbsp; <a href="https://www.buymeacoffee.com/akramzaitout">Buy me a coffee</a></p>
+<p align="center">Made with ❤️ by <a href="https://github.com/akramzaitout">Akram Zaitout</a></p>
